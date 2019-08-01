@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/javascript" src="application.js"></script>
+    <title>Gacha</title>
+</head>
+<body>
+<label for="chance">Chance of obtaining character (in percentage)</label>
+<p><input type="number" id="starting" name="chance">%</p>
+<br>
+<label for="probability">Desired probability</label>
+<p><input type="number" id="desired" name="probability">%</p>
+<br>
+<button onclick="findRolls();">Find rolls</button>
+<br>
+<p id="result"></p>
+<br>
+<p><input type="checkbox" id="nopity" onclick="toggleCheckBox()">No pity multiplier</p>
+<br>
+<p>Pity percent: <input type="number" id="pitypercent" placeholder="0.25">%</p>
+<br>
+<p>Pity frequency: Every <input type="number" id="pityfrequency" placeholder="5"> rolls</p>
+</body>
