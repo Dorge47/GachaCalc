@@ -4,14 +4,14 @@ function findRolls() {
     cumulativeChance = [0];
     pity = 0.25;
     frequency = 5;
-	startChance = parseInt(document.getElementById('starting').value);
-	desiredPercent = parseInt(document.getElementById('desired').value);
+	startChance = parseFloat(document.getElementById('starting').value);
+	desiredPercent = parseFloat(document.getElementById('desired').value);
     if (!document.getElementById('nopity').checked) {
         if (document.getElementById('pitypercent').value != '') {
-            pity = parseInt(document.getElementById('pitypercent').value);
+            pity = parseFloat(document.getElementById('pitypercent').value);
         };
         if (document.getElementById('pityfrequency').value != '') {
-            frequency = parseInt(document.getElementById('pityfrequency').value);
+            frequency = parseFloat(document.getElementById('pityfrequency').value);
         };
     }
     else {

@@ -11,10 +11,10 @@
 </head>
 <body>
 <label for="chance">Chance of obtaining character (in percentage)</label>
-<p><input type="number" id="starting" name="chance">%</p>
+<p><input type="number" id="starting" name="chance" min="0" step="0.01">%</p>
 <br>
 <label for="probability">Desired probability</label>
-<p><input type="number" id="desired" name="probability">%</p>
+<p><input type="number" id="desired" name="probability" min="0" step="0.01">%</p>
 <br>
 <button onclick="findRolls();">Find rolls</button>
 <br>
