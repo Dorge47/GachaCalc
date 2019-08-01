@@ -18,11 +18,11 @@ function findRolls() {
         pity = 0;
         frequency = 1;
     };
-	if (desiredPercent >= 100) {
+	if (desiredPercent >= 100 || startChance <= 0) {
 		alert('Invalid percent');
 		return 0;
 	};
-	for (let i = 0; i <= 1000; i++) {
+	for (let i = 0; i <= 92100; i++) {
 		percentList[i] = startChance + pity * i;
 	};
 	actualChance = startChance/100;
