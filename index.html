@@ -9,22 +9,36 @@
     <script type="application/javascript" src="application.js"></script>
     <title>Gacha</title>
 </head>
-<body>
-    <label for="chance">Chance of obtaining character (in percentage)</label>
-    <p><input type="number" id="starting" name="chance" min="0" step="0.01">%</p>
-    <br>
-    <label for="probability">Desired probability</label>
-    <p><input type="number" id="desired" name="probability" min="0" step="0.01">%</p>
-    <br>
-    <button onclick="findRolls();">Find rolls</button>
-    <br>
-    <p id="result"></p>
-    <br>
-    <p><input type="checkbox" id="nopity" onclick="toggleCheckBox()">No pity multiplier</p>
-    <br>
-    <p>Pity percent: <input type="number" id="pitypercent" placeholder="0.25">%</p>
-    <br>
-    <p>Pity frequency: Every <input type="number" id="pityfrequency" placeholder="5"> rolls</p>
+<body onload="startup()">
+    <fieldset>
+        <p><input type="radio" value="0" name="pityType" onclick="showRollsForm(false)">Find orbs to guarantee (FEH only)</p>
+        <p><input type="radio" value="1" name="pityType" onclick="showRollsForm(true)">Find rolls</p>
+    </fieldset>
+    <fieldset id="rollsForm">
+        <br>
+        <label for="chance">Chance of obtaining character (in percentage)</label>
+        <p><input type="number" id="starting" name="chance" min="0" step="0.01">%</p>
+        <br>
+        <label for="probability">Desired probability</label>
+        <p><input type="number" id="desired" name="probability" min="0" step="0.01">%</p>
+        <br>
+        <button onclick="findRolls();">Find rolls</button>
+        <br>
+        <p id="rollsResult"></p>
+        <br>
+        <p><input type="checkbox" id="nopity" onclick="toggleCheckBox()">No pity multiplier</p>
+        <br>
+        <p>Pity percent: <input type="number" id="pitypercent" placeholder="0.25">%</p>
+        <br>
+        <p>Pity frequency: Every <input type="number" id="pityfrequency" placeholder="5"> rolls</p>
+    </fieldset>
+    <fieldset id="orbsForm">
+        <p><input type="number" id="summons" placeholder="0"> summons so far</p>
+        <br>
+        <button onclick="findOrbs();">Find orbs</button>
+        <br>
+        <p id="orbsResult"></p>
+    </fieldset>
     <hr style="color:rgba(100,100,100,0.2);">
     <footer>Site code copyleft Chris Andrade 2019</footer>
 </body>
