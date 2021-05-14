@@ -18,15 +18,18 @@ function findRolls() {
         pity = 0;
         frequency = 1;
     };
-	if (desiredPercent >= 100 || startChance <= 0) {
+	if (desiredPercent >= 100 || desiredPercent <= 0 || startChance <= 0 || startChance > 100) {
 		alert('Invalid percent');
 		return 0;
 	};
-	for (let i = 0; i <= 92100; i++) {
+	for (let i = 0; i <= 92100; i++) {  // I'm sure this number was probably significant but I don't remember why
 		percentList[i] = startChance + pity * i;
 	};
 	actualChance = startChance/100;
 	rolls = 0;
+    if (!(actualChance < (desiredPercent)/100)) {  // We already have the desired chance
+        rolls = 1;
+    }
 	while (actualChance < (desiredPercent)/100) {
 		rolls++;
 		chanceList[rolls] = percentList[Math.floor(rolls/frequency)]/100;
